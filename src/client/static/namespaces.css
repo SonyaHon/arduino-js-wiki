@@ -1,0 +1,37 @@
+#namespaces {
+    height: 100%;
+    width: 400px;
+    background-color: #eceff1;
+    display: flex;
+    flex-direction: column;
+}
+.namespaces-main {
+    width: 100%;
+    height: calc(100% - 40px);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.namespace-member {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 40px;
+}
+.namespace-member-title {
+    width: calc(100% - 20px);
+    font-family: TextRegular, monospace;
+    font-size: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: transparent;
+    transition: background 0.08s linear;
+}
+.namespace-member-title:hover {
+    cursor: pointer;
+    background-color: #d4d7d9;
+}

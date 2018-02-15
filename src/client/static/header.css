@@ -1,0 +1,15 @@
+.header {
+    margin: 50px 20px;
+    font-size: 30px;
+    font-family: TextLight, monospace;
+    position: sticky;
+    min-height: 35px;
+    max-height: 35px;
+}
+
+.header-wrapper {
+    height: 135px;
+    width: 100%;
+    background-color: #eceff1;
+    padding-top: 1px;
+}
