@@ -13,6 +13,23 @@ function GetRequest(url, clb) {
 }
 
 //helps
+
+class NamespaceField {
+  constructor(data, namespace) {
+    this.data = data;
+    this.namespace = namespace;
+    this.el = document.createElement('div');
+    this.el.classList.add('namespace-field');
+    this.el.innerText = data.name;
+    this.el.addEventListener('click', () => {
+      let header = document.getElementById('method-name');
+      let content = document.getElementById('content');
+
+      // TODO: Make data appear
+
+    });
+  }
+}
 class NamespaceMember {
   constructor(name, data) {
     this.el = document.createElement('div');
@@ -22,11 +39,24 @@ class NamespaceMember {
     this.el.appendChild(this.category_title);
     this.category_title.innerHTML = `<span>${name}</span>`;
     if(data.length > 1) {
-      // todo: craft shit from data
-    }
+      this.category_fields = document.createElement('div');
+      this.category_fields.classList.add('namespace-member-fields');
+      this.el.appendChild(this.category_fields);
 
+      data.forEach( (file) => {
+        if(file !== 'index.ardoc') {
+          GetRequest(`/namespace?name=${name}&file=${file}`, (data) => {
+              this.category_fields.appendChild((new NamespaceField(JSON.parse(data), name)).el);
+          });
+        }
+      });
+
+    }
     this.category_title.addEventListener('click', () => {
-      console.log('YAAY');
+      GetRequest(`/namespace?name=${name}&file=index.ardoc`, (data) => {
+        document.getElementById('method-name').style.display = 'none';
+        document.getElementById('content').innerHTML = data;
+      })
     });
 
   }

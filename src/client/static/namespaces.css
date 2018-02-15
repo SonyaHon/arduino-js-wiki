@@ -35,3 +35,24 @@
     cursor: pointer;
     background-color: #d4d7d9;
 }
+.namespace-member-fields {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.namespace-field {
+    width: calc(100% - 70px);
+    padding-left: 70px;
+    font-family: TextRegular, monospace;
+    font-size: 18px;
+    min-height: 25px;
+    transition: background 0.08s linear;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+.namespace-field:hover {
+    cursor: pointer;
+    background-color: #d4d7d9;
+}

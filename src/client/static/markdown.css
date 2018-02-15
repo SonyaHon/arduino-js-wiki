@@ -1,0 +1,13 @@
+#content h1,h2,h3,h4,h5,h6 {
+    font-family: TextLight, monospace;
+    text-decoration: none;
+    border-bottom: 1px solid #eceff1;
+}
+#content h2,h3,h4,h5,h6 {
+    border: none;
+}
+
+#content {
+    font-family: TextRegular, monospace;
+    font-size: 18px;
+}

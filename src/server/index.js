@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const app = express();
+const url = require('url');
+const parser = require('./parser.js');
 
 app.get('/', (req, res) => {
   fs.readFile(path.join(__dirname, '../client/static/index.html'), 'utf8', (err, data) => {
@@ -29,6 +31,21 @@ app.get('/namespaces', (req, res) => {
   });
 });
 
+app.get(/\/namespace?.*/, (req, res) => {
+  let name = req.query.name;
+  let file = req.query.file;
+
+  fs.readdir(path.join(__dirname, 'ARDOC'), (err, files) => {
+    for(let i = 0; i < files.length; i++) {
+      if(files[i].match(new RegExp(name))) {
+        let str = parser.parse(path.join(__dirname, 'ARDOC', files[i], file));
+        res.send(str);
+        break;
+      }
+    }
+  });
+
+});
 
 
 app.listen(8080, () => {

@@ -1,0 +1,19 @@
+@description
+@type: method
+@name: DigitalWrite
+@params
+
+@param-name: pin
+@param-type: string
+@param-desc: Pin, which should be written
+
+@param-name: value
+@param-type: number
+@param-desc: Value to write. Please, consider using Commands.HIGH or Commands.LOW
+
+@/params
+
+@desc: Writes value to the pin.
+@example: /*
+  Arduino.DigitalWrite('D13', Commands.HIGH) // write high voltage to the d9 pin.
+*/

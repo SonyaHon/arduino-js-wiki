@@ -1,2 +1,10 @@
 @article
 # ArduinoJS Wiki Overview
+## What is it for?
+Arduino is coded in C++ language, and has a little amount of memory, so i decided to create this to eliminate all problems with memory and hard to fastcode C++.
+## Some information about it
+Simple to use, speedy, with all benefits of JavaScript!
+Already has
+ * All arduino needed bindings
+ * Servo library
+
