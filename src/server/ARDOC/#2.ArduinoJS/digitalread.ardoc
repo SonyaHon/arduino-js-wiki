@@ -1,0 +1,23 @@
+@description
+@type: method
+@name: DigitalRead
+@params
+
+@param-name: pin
+@param-type: string
+@param-desc: Pin, which should be written to
+
+@param-name: callback
+@param-type: function
+@param-desc: Called when data is received. Should have argument, containing data, which has been read
+
+@/params
+
+@desc: Reads data from pin and calls callback on ready
+@example: /*
+  Arduino.DigitalRead('D1', (data) => {
+    if(data === Commands.HIGHT) {
+      // Turn on the lights, etc.
+    }
+  });
+*/

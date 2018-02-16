@@ -1,0 +1,53 @@
+.method-wrapper {
+
+}
+
+.method-signature {
+    font-family: Code, monospace;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eceff1;
+}
+
+.method-description {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.method-params {
+    padding-left: 30px;
+}
+
+.method-param {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.method-param-name {
+    background-color: #eceff1;
+    padding: 2px;
+    font-family: Code, monospace;
+    margin-right: 10px;
+}
+
+.method-param-desc {
+
+}
+
+.method-param-type-type {
+    color: #57c05d;
+}
+
+.method-param-type {
+    margin-right: 10px;
+}
+
+.method-example {
+    font-family: Code,monospace;
+    color: black;
+    background-color: #eceff1;
+    font-size: 16px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}

@@ -13,3 +13,22 @@
     background-color: #eceff1;
     padding-top: 1px;
 }
+
+#main-header:hover {
+    cursor: pointer;
+}
+
+#github {
+    font-size: 30px;
+    margin-left: 10px;
+}
+#github svg {
+    transition: color 0.08s linear;
+    color: black;
+}
+
+
+#github svg:hover{
+    cursor: pointer;
+    color: gray;
+}

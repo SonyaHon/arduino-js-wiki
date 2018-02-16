@@ -1,0 +1,18 @@
+@description
+@type: method
+@name: AnalogWrite
+@params
+
+@param-name: pin
+@param-type: string
+@param-desc: Pin, which should be written to
+
+@param-name: value
+@param-type: number
+@param-desc: Integer number from 0 to 1023, which should be written
+
+@/params
+@desc: Write PWM data to pin
+@example: /*
+  Arduino.AnalogWrite('D9', 1023) // writes pwm of 1023 to pin d9
+*/

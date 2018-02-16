@@ -5,10 +5,10 @@
 
 @param-name: pin
 @param-type: string
-@param-desc: Pin, which should be written
+@param-desc: Pin, which should be written to
 
 @param-name: value
-@param-type: number
+@param-type: number|boolean
 @param-desc: Value to write. Please, consider using Commands.HIGH or Commands.LOW
 
 @/params

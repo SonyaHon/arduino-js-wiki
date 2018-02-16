@@ -29,6 +29,7 @@ class Parser {
         let idx_end = file.match(/@\/params/).index;
         let params = file.substr(idx_start, idx_end - 41);
 
+        // ADD NEW PARAM PROPS HERE
         params = params.match(/@param-name: ?([^\r\n]*)|@param-type: ?([^\r\n]*)|@param-desc: ?(("([^"]*)")|([^\r\n]*))|@param-exp: ?(\/\*[^]*\*\/)/g);
 
         let current_param = null;
@@ -50,6 +51,7 @@ class Parser {
 
         final_obj.description = file.match(/@desc: ?(("([^"]*)")|([^\r\n]*))/)[1];
         final_obj.example = file.match(/@example: ?\/\*([^]*)\*\//)[1];
+        //  ADD NEW PROPS HERE
 
         console.log(final_obj);
         return final_obj;
