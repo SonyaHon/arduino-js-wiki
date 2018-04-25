@@ -4,6 +4,7 @@
     background-color: #eceff1;
     display: flex;
     flex-direction: column;
+    transition: width 0.2s linear;
 }
 .namespaces-main {
     width: 100%;
@@ -55,4 +56,19 @@
 .namespace-field:hover {
     cursor: pointer;
     background-color: #d4d7d9;
+}
+
+@media screen and (max-width: 1600px) {
+    #namespaces {
+        width: 300px !important;
+    }   
+    #information {
+        width: calc(100% - 300px)!important;
+    }
+    .namespace-field {
+        padding-left: 40px;
+    }
+    .header-wrapper {
+        width: 100%;
+    }
 }

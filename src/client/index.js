@@ -4,7 +4,7 @@ const information = document.getElementById('information');
 function GetRequest(url, clb) {
   let xmlReq = new XMLHttpRequest();
   xmlReq.onreadystatechange = () => {
-    if(xmlReq.readyState == 4 && xmlReq.status == 200) {
+    if (xmlReq.readyState == 4 && xmlReq.status == 200) {
       clb(xmlReq.response);
     }
   };
@@ -48,11 +48,11 @@ class NamespaceField {
     fn_signature.innerText = data.name + '( ';
     el.appendChild(fn_signature);
     let params = [];
-    Object.keys(data.params).forEach( (key) => {
-      params.push({name: key, data: data.params[key]});
+    Object.keys(data.params).forEach((key) => {
+      params.push({ name: key, data: data.params[key] });
     });
-    params.sort( (a, b) => {
-      if( a.data.idx > b.data.idx) {
+    params.sort((a, b) => {
+      if (a.data.idx > b.data.idx) {
         return 1;
       }
       else {
@@ -72,7 +72,7 @@ class NamespaceField {
     params.forEach((param) => {
       let prm_el = document.createElement('div');
       prm_el.classList.add('method-param');
-      let prm_name =  document.createElement('span');
+      let prm_name = document.createElement('span');
       prm_name.classList.add('method-param-name');
       prm_name.innerText = param.name.trim();
       prm_el.appendChild(prm_name);
@@ -85,7 +85,7 @@ class NamespaceField {
         avail_str += `<span class="method-param-type-type">&#139;${t}&#155;</span> | `;
       });
       avail_str = avail_str.substr(0, avail_str.length - 2);
-      prm_type.innerHTML =  avail_str;
+      prm_type.innerHTML = avail_str;
       prm_el.appendChild(prm_type);
       let prm_desc = document.createElement('span');
       prm_desc.classList.add('method-param-desc');
@@ -118,15 +118,15 @@ class NamespaceMember {
     this.category_title.classList.add('namespace-member-title');
     this.el.appendChild(this.category_title);
     this.category_title.innerHTML = `<span>${name}</span>`;
-    if(data.length > 1) {
+    if (data.length > 1) {
       this.category_fields = document.createElement('div');
       this.category_fields.classList.add('namespace-member-fields');
       this.el.appendChild(this.category_fields);
 
-      data.forEach( (file) => {
-        if(file !== 'index.ardoc') {
+      data.forEach((file) => {
+        if (file !== 'index.ardoc') {
           GetRequest(`/namespace?name=${name}&file=${file}`, (data) => {
-              this.category_fields.appendChild((new NamespaceField(JSON.parse(data), name)).el);
+            this.category_fields.appendChild((new NamespaceField(JSON.parse(data), name)).el);
           });
         }
       });
@@ -151,8 +151,8 @@ class Namespaces {
   craftDirs() {
     let keys = Object.keys(this.data);
     keys.sort();
-    keys.forEach( (elem) =>  {
-      this.el.appendChild((new NamespaceMember(elem.substr(3),this.data[elem])).el);
+    keys.forEach((elem) => {
+      this.el.appendChild((new NamespaceMember(elem.substr(3), this.data[elem])).el);
     });
   }
 }
@@ -170,8 +170,8 @@ document.getElementById('main-header').addEventListener('click', () => {
 });
 
 document.getElementById('github').addEventListener('click', () => {
-    let a = document.createElement('a');
-    a.href = "https://github.com/SonyaHon/arduino_js";
-    a.setAttribute('target', '_blank');
-    a.click();
+  let a = document.createElement('a');
+  a.href = "https://github.com/SonyaHon/arduino_js";
+  a.setAttribute('target', '_blank');
+  a.click();
 });
